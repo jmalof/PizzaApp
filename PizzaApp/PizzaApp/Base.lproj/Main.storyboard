@@ -53,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
-        <!--Pizza Size View Controller-->
+        <!--Tamaño-->
         <scene sceneID="HZb-uh-XlE">
             <objects>
                 <viewController id="y3P-8U-Ep1" customClass="PizzaSizeViewController" customModule="PizzaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,12 +109,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CW7-nS-m4f"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Tamaño" id="tXJ-kk-BGW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Svd-qE-C7t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1869.5999999999999" y="133.5832083958021"/>
         </scene>
-        <!--Pizza Masa View Controller-->
+        <!--Masa-->
         <scene sceneID="BhV-fz-JVL">
             <objects>
                 <viewController id="ugd-xU-z56" customClass="PizzaMasaViewController" customModule="PizzaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -170,12 +171,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="L4q-BZ-ft6"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Masa" id="bRx-7T-zgJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WfM-Uk-Anl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2661.5999999999999" y="130.88455772113943"/>
         </scene>
-        <!--Pizza Queso View Controller-->
+        <!--Queso-->
         <scene sceneID="H0J-pp-65n">
             <objects>
                 <viewController id="tmK-no-A5J" customClass="PizzaQuesoViewController" customModule="PizzaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -242,12 +244,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="18y-NW-gpZ"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Queso" id="orH-5s-1Jx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0uw-2h-7ev" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3456.8000000000002" y="130.88455772113943"/>
         </scene>
-        <!--Pizza Ingredients View Controller-->
+        <!--Ingredientes-->
         <scene sceneID="4pW-3Y-pT2">
             <objects>
                 <viewController id="XY6-TW-FsN" customClass="PizzaIngredientsViewController" customModule="PizzaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -372,6 +375,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ewJ-oo-VH1"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Ingredientes" id="ona-a8-3PB"/>
                     <connections>
                         <outlet property="btnAceituna" destination="ghy-Bz-R0G" id="hTU-fr-Yos"/>
                         <outlet property="btnCebolla" destination="PVM-0j-dxQ" id="EU4-pV-ki6"/>
@@ -388,7 +392,7 @@
             </objects>
             <point key="canvasLocation" x="4244" y="133.5832083958021"/>
         </scene>
-        <!--Resultado View Controller-->
+        <!--Fin-->
         <scene sceneID="jLL-Z4-nrb">
             <objects>
                 <viewController id="crO-er-UuU" customClass="ResultadoViewController" customModule="PizzaApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -420,6 +424,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ii8-fN-Hfe"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Fin" id="HrD-ib-hoZ"/>
                     <connections>
                         <outlet property="textView" destination="OKc-O0-y9F" id="HML-KG-F8Z"/>
                     </connections>
