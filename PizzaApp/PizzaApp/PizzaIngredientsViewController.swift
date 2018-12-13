@@ -11,8 +11,6 @@ import UIKit
 class PizzaIngredientsViewController: UIViewController {
     var pedido : Pedido?
     
-    @IBOutlet weak var textViewError: UILabel!
-    
     @IBOutlet weak var btnJamon: UIButton!
     @IBOutlet weak var btnPepperoni: UIButton!
     @IBOutlet weak var btnPavo: UIButton!
@@ -87,10 +85,25 @@ class PizzaIngredientsViewController: UIViewController {
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if ((pedido?.ingredientes.count)! < 5){
-            textViewError.text = "Debes seleccionar mínimo 5 ingredientes"
+            let alert = UIAlertController(title: "Error!", message: "Debes seleccionar mínimo 5 ingredientes.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Entendido", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
         }else{
-            print(pedido!.toString())
-            (segue.destination as! ResultadoViewController).pedido = pedido
+            let alert = UIAlertController(title: "Confimación!", message: "Confirmas tu elección de la pizza?\nResumen:\n -"+pedido!.toString(), preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Aún No!", style: .cancel, handler: nil))
+            
+            alert.addAction(UIAlertAction(title: "Si", style: .default, handler: {
+                action in
+                alert.dismiss(animated: true, completion: {
+                    (segue.destination as! ResultadoViewController).pedido = self.pedido
+                })
+                
+            }))
+            
+            self.present(alert, animated: true)
         }
         
     }
