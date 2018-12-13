@@ -15,8 +15,9 @@ class ResultadoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(pedido!.toString())
+        
         if(pedido != nil){
+            print(pedido!.toString())
             textView.text = pedido!.toString()
         }
         // Do any additional setup after loading the view.

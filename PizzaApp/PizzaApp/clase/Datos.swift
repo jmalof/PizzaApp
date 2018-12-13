@@ -42,7 +42,9 @@ class Pedido {
         }
         return result
     }
+    
     init() {}
+    
     func toString() -> String {
         return "Tamaño: \(self.tamanio?.rawValue ?? "") \nMasa: \(self.masa?.rawValue ?? "") \nQueso: \(self.queso?.rawValue ?? "") \n\n \tIngredientes: \(self.listIngredientes())"
     }

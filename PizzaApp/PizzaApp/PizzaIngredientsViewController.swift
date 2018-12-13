@@ -83,7 +83,8 @@ class PizzaIngredientsViewController: UIViewController {
             btnPinia.isEnabled = false
         }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+    @IBAction func confirmarEnvioCorreto(_ sender: UIButton) {
         if ((pedido?.ingredientes.count)! < 5){
             let alert = UIAlertController(title: "Error!", message: "Debes seleccionar mínimo 5 ingredientes.", preferredStyle: .alert)
             
@@ -94,17 +95,25 @@ class PizzaIngredientsViewController: UIViewController {
             let alert = UIAlertController(title: "Confimación!", message: "Confirmas tu elección de la pizza?\nResumen:\n -"+pedido!.toString(), preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "Aún No!", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Reiniciar", style: .default, handler: {
+                action in
+                self.performSegue(withIdentifier: "viewToMain", sender: self)
+            }))
             
             alert.addAction(UIAlertAction(title: "Si", style: .default, handler: {
                 action in
-                alert.dismiss(animated: true, completion: {
-                    (segue.destination as! ResultadoViewController).pedido = self.pedido
-                })
-                
+                self.performSegue(withIdentifier: "viewToResultado", sender: self)
             }))
             
             self.present(alert, animated: true)
         }
-        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewToResultado"{
+            (segue.destination as! ResultadoViewController).pedido = pedido
+        }
+        if segue.identifier == "viewToMain"{
+            (segue.destination as! ViewController).pedido = nil
+        }
     }
 }
